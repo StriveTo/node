@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+			    margin:0;
+			    padding:0;
+			}
+			ul,ol,li{
+			    list-style:none;
+			}
+			a,u{
+			    text-decoration:none;
+			}
+			img{
+			    border:0;
+			    display:block;
+			}
+			i,em{
+			    font-style:normal;
+			}
+			h1,h2,h3,h4,h5,h6{
+			    font-size:16px;
+			    font-weight:100;
+			}
+			.clearfix:after{
+			    content:".";
+			    clear:both;
+			    height:0;
+			    display:block;
+			    overflow:hidden;
+			    visibility:hidden;
+			}
+			.add-goods {
+				overflow: auto;
+				min-width: 773px;
+				padding: 10px;
+				background: url(../lbimg/body_bj.jpg);
+			}
+			
+			.add-goods .head {
+				height: 27px;
+				padding: 7px 10px;
+				border-bottom: 1px solid #ccc;
+				color: #333;
+				margin-bottom: 10px;
+			}
+			
+			.add-goods .head h1 {
+				height: 27px;
+				font-size: 18px;
+				float: left;
+			}
+			
+			.add-goods .head img {
+				width: 110px;
+				height: 26px;
+				float: left;
+				margin-left: 20px;
+			}
+			
+			.add-goods .head a {
+				float: right;
+				width: 110px;
+				height: 26px;
+				line-height: 26px;
+				font-size: 13px;
+				color: white;
+				text-align: center;
+				margin-right: 20px;
+				background: #c43926 url(../lbimg/icon_add02.gif) no-repeat 6px center;
+			}
+			.main{
+				background: #f3f3f3;
+				margin-bottom: 10px;
+				padding: 1px;
+				border: 1px solid #d7d7d7;
+			}
+			.main-nav{
+				height: 37px;
+				padding-left: 20px;
+			}
+			.main-nav li{
+				line-height: 37px;
+				height: 37px;
+				padding: 0 20px;
+				font-size: 13px;
+				color: #787878;
+				float: left;
+				cursor: pointer;
+				text-align: center;
+			}
+			.main .main-ul{
+				background: #fefefe;
+				padding: 10px;
+				font-size: 12px;
+			}
+			.main-ul li{
+				height: 40px;
+				padding-left: 23%;
+			}
+			.main-ul li p{
+				float: left;
+				width: 110px;
+				height: 40px;
+				line-height: 40px;
+				text-align: right;
+				padding-right: 20px;
+				color: #192E32;
+				font-weight: bold;
+			}
+			p img{
+				display: inline-block;
+				margin-top: 14px;
+			}
+			.main-ul li span{
+				/*display: none;*/
+				display: block;
+				color: #666;
+				line-height: 18px;
+			}
+			.main-ul li input{
+				margin-top: 10px;
+				height: 20px;
+			}
+			.main-ul .lip p{
+				height: 50px;
+				line-height: 50px;
+			}
+			.main-ul .lip input{
+				margin-top: 8px;
+			}
+			.main-ul .lip2 p{
+				height: 56px;
+				line-height: 56px;
+			}
+			.main-ul .lip3 p{
+				height: 75px;
+				line-height: 75px;
+			}
+			section{
+				height: 40px;
+				float: left;
+				color: #666;
+			}
+			.lip section{
+				height: 50px;
+			}
+			.lip2 section{
+				height: 56px;
+				width: 255px;
+			}
+			.lip3 section{
+				height: 75px;
+				width: 255px;
+			}
+			.btn1{
+				margin: 0 5px;
+			    padding: 0 5px;
+			    border: 1px solid #91C4D0;
+			    border-right: 2px solid #278296;
+			    border-bottom: 2px solid #278296;
+			    background: #DDEEF2;
+			    text-decoration: none;
+			    font-weight: 400;
+			    color: #335B64;
+			}
+			.btn2{
+				padding: 0 15px;
+				line-height: 26px;
+				height: 26px !important;
+			    margin: 2px 2px;
+			    border: none;
+			    background: #ff3f3f;
+			    color: #FFF;
+			    cursor: pointer;
+			    border-radius: 3px;
+			}
+			.btn3{
+				height: 22px !important;
+				background: #eee;
+			}
+			.btn4{
+				width: 240px;
+				height: 22px !important;
+				line-height: 22px;
+				margin-top: 5px !important;
+			}
+			.txt{
+				width: 63px;
+			}
+			.txt1{
+				width: 255px;
+				margin-top: 5px !important;
+			}
+			.footer{
+			    background: #f3f3f3;
+			    border: 1px solid #ddd;
+			    padding: 15px;
+			    color: #9CACAF;
+			    margin: 10px 0;
+			    text-align: center;
+			    font-size: 12px; 
+			}
+		</style>
+	</head>
+	<body>
+		<div class="add-goods">
+			<div class="head">
+				<h1>ECSHOP 管理中心 - 添加新商品</h1>
+				<img src="../lbimg/jnsy.png"/>
+				<a href="javascript:;">添加新商品</a>
+			</div>
+			<div class="main clearfix">
+				<ul class="main-nav">
+					<li>通用信息</li>
+					<li>详细描述</li>
+					<li>其他信息</li>
+					<li>商品属性</li>
+					<li>商品相册</li>
+					<li>关联商品</li>
+					<li>配件</li>
+					<li>关联文章</li>
+				</ul>
+				<ul class="main-ul">
+					<li>
+						<p>商品名称：</p>
+						<input style="width: 192px;" type="text"/>
+					</li>
+					<li class="lip" style="height: 50px;">
+						<p><img src="../lbimg/notice.gif"/>商品货号：</p>
+						<section>
+							<input type="text" />
+							<span>如果您不输入商品货号，系统将自动生成一个唯一的货号。</span>
+						</section>
+					</li>
+					<li>
+						<p>商品分类：</p>
+						<select style="width: 158px;">
+							<option value="0">请选择...</option>
+							<option value="1">衣服</option>
+							<option value="2">鞋</option>
+						</select>
+						<input class="btn1" type="button" value="添加分类" />
+						<input style="width: 75px;" type="text" />
+						<input class="btn1" type="button" value="确定" />
+						<input class="btn1" type="button" value="分类管理" />
+						<input class="btn1" type="button" value="< <" />
+					</li>
+					<li>
+						<p>扩展分类：</p>
+						<input class="btn2" type="button" value="添加" />
+					</li>
+					<li>
+						<p>商品品牌：</p>
+						<select>
+							<option value="0">请选择...</option>
+							<option value="1">阿迪达斯</option>
+							<option value="2">耐克</option>
+						</select>
+						<input class="btn1" type="button" value="添加品牌" />
+						<input style="width: 75px;" type="text" />
+						<input class="btn1" type="button" value="确定" />
+						<input class="btn1" type="button" value="品牌管理" />
+						<input class="btn1" type="button" value="< <" />
+					</li>
+					<li>
+						<p>本店售价：</p>
+						<input type="text" value="0" />
+						<input class="btn3" type="button" value="按市场价计算" />
+					</li>
+					<li class="lip" style="height: 50px;">
+						<p><img src="../lbimg/notice.gif"/>会员价格：</p>
+						<section>
+							<i>注册用户</i>
+							<input class="txt" type="text" value="-1"/>
+							<i>代销用户</i>
+							<input class="txt" type="text" value="-1"/>
+							<i>vip</i>
+							<input class="txt" type="text" value="-1"/>
+							<span>会员价格为-1时表示会员价格按会员等级折扣率计算。你也可以为每个等级指定一个固定价格</span>
+						</section>
+						
+					</li>
+					<li class="lip2" style="height: 56px;">
+						<p><img src="../lbimg/notice.gif"/>商品优惠价格：</p>
+						<section>
+							<i>优惠数量</i>
+							<input class="txt" type="text" value="-1"/>
+							<i>优惠价格</i>
+							<input class="txt" type="text" value="-1"/>
+							<span>购买数量达到优惠数量时享受的优惠价格</span>
+						</section>
+						
+					</li>
+					<li>
+						<p>市场售价：</p>
+						<input type="text" value="0"/>
+						<input class="btn3" type="button" value="取整数"/>
+					</li>
+					<li>
+						<p>虚拟销量：</p>
+						<input type="text" value="0"/>
+					</li>
+					<li class="lip" style="height: 50px;">
+						<p><img src="../lbimg/notice.gif"/>赠送消费积分数：</p>
+						<section>
+							<input type="text" value="-1"/>
+							<span>购买该商品时赠送消费积分数,-1表示按商品价格赠送</span>
+						</section>
+						
+					</li>
+					<li class="lip" style="height: 50px;">
+						<p><img src="../lbimg/notice.gif"/>赠送等级积分数：</p>
+						<section>
+							<input type="text" value="-1"/>
+							<span>购买该商品时赠送等级积分数,-1表示按商品价格赠送</span>
+						</section>
+						
+					</li>
+					<li class="lip" style="height: 50px;">
+						<p><img src="../lbimg/notice.gif"/>积分购买金额：</p>
+						<section>
+							<input type="text" value="-1"/>
+							<span>(此处需填写金额)购买该商品时最多可以使用积分的金额</span>
+						</section>
+						
+					</li>
+					<li>
+						<p>
+							<input type="checkbox" />
+							促销价：
+						</p>
+						<input type="text" value="0"/>
+					</li>
+					<li>
+						<p>促销日期：</p>
+						<input type="date" name="" id="" value="" />
+						<input class="btn2" type="button" value="选择" /> - 
+						<input type="date" name="" id="" value="" />
+						<input class="btn2" type="button" value="选择" />
+					</li>
+					<li class="lip2" style="height: 56px;">
+						<p>上传商品图片：</p>
+						<section>
+							<input class="btn4" type="file" value="选择文件" />
+							<input class="txt1" type="text" placeholder="商品图片外部URL" value=""/>
+						</section>
+						
+					</li>
+					<li class="lip3" style="height: 75px;">
+						<p>上传商品缩略图：</p>
+						<section>
+							<input class="btn4" type="file" value="选择文件" />
+							<input class="txt1" type="text" placeholder="商品缩略图外部URL" value=""/>
+							<input style="margin-top: 3px;float: left;" type="checkbox" /><i style="float: left;margin-top: 4px;">自动生成商品缩略图</i>
+						</section>
+						
+					</li>
+					<li style="height: 36px;margin-left: 350px;">
+						<input class="btn2" type="button" value="确定" />
+						<input class="btn2" type="button" value="重置" />
+					</li>
+				</ul>
+				
+			</div>
+			<div class="footer">
+				<p>共执行 7 个查询，用时 0.061004 秒，Gzip 已禁用，内存占用 3.549 MB</p>
+				<p>版权所有 © 2005-2018 上海商派软件有限公司，并保留所有权利。</p>
+			</div>
+		</div>	
+	</body>
+</html>

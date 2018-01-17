@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+			    margin:0;
+			    padding:0;
+			}
+			ul,ol,li{
+			    list-style:none;
+			}
+			a,u{
+			    text-decoration:none;
+			}
+			img{
+			    border:0;
+			    display:block;
+			}
+			i,em{
+			    font-style:normal;
+			}
+			h1,h2,h3,h4,h5,h6{
+			    font-size:16px;
+			    font-weight:100;
+			}
+			.clearfix:after{
+			    content:".";
+			    clear:both;
+			    height:0;
+			    display:block;
+			    overflow:hidden;
+			    visibility:hidden;
+			}
+			.lb {
+		  overflow: auto;
+		  min-width: 773px;
+		  padding: 10px;
+		  background: url(/lbimg/body_bj.jpg); }
+		  .lb .head {
+		    height: 27px;
+		    padding: 7px 10px;
+		    border-bottom: 1px solid #ccc;
+		    color: #333;
+		    margin-bottom: 10px; }
+		    .lb .head h1 {
+		      height: 27px;
+		      font-size: 18px;
+		      float: left; }
+		    .lb .head img {
+		      width: 110px;
+		      height: 26px;
+		      float: left;
+		      margin-left: 20px; }
+		    .lb .head a {
+		      float: right;
+		      width: 110px;
+		      height: 26px;
+		      line-height: 26px;
+		      font-size: 13px;
+		      color: white;
+		      text-align: center;
+		      margin-right: 20px;
+		      background: #c43926 url(/lbimg/icon_add02.gif) no-repeat 6px center; }
+		  .lb .search {
+		    height: 30px;
+		    border: 1px solid #ddd;
+		    padding: 5px;
+		    line-height: 30px;
+		    font-size: 16px;
+		    margin-bottom: 10px; }
+		    .lb .search img {
+		      float: left;
+		      width: 26px;
+		      height: 22px;
+		      margin-top: 5px; }
+		    .lb .search .classify {
+		      width: 158px;
+		      height: 20px;
+		      float: left;
+		      margin-top: 6px;
+		      margin-left: 2px; }
+		    .lb .search .brand {
+		      width: 105px;
+		      height: 20px;
+		      float: left;
+		      margin-top: 6px;
+		      margin-left: 2px; }
+		    .lb .search .all1 {
+		      width: 72px;
+		      height: 20px;
+		      float: left;
+		      margin-top: 6px;
+		      margin-left: 2px; }
+		    .lb .search .all2 {
+		      width: 48px;
+		      height: 20px;
+		      float: left;
+		      margin-top: 6px;
+		      margin-left: 2px; }
+		    .lb .search .key {
+		      float: left;
+		      font-size: 12px;
+		      color: #aaa;
+		      margin-left: 2px;
+		      height: 30px; }
+		      .lb .search .key #keyword {
+		        width: 103px;
+		        height: 20px;
+		        margin-top: 4px; }
+		    .lb .search .btn {
+		      float: left;
+		      width: 62px;
+		      height: 26px;
+		      text-align: center;
+		      line-height: 26px;
+		      background: #ff3f3f;
+		      border-radius: 3px;
+		      border: 0;
+		      color: white;
+		      margin-top: 3px;
+		      margin-left: 2px; }
+		  .lb .shops {
+		    width: 100%;
+		    background: white; }
+		    .lb .shops .list-title {
+		      height: 45px;
+		      width: 100%;
+		      background: #ddd; }
+		      .lb .shops .list-title li {
+		        float: left;
+		        height: 43px;
+		        padding: 0 10px;
+		        line-height: 43px;
+		        text-align: center;
+		        font-size: 12px;
+		        background: #f3f3f3;
+		        border: 1px solid #ddd;
+		        border-left: 0; }
+		        .lb .shops .list-title li a {
+		          color: #111; }
+		      .lb .shops .list-title li:first-of-type {
+		        border-left: 1px solid #ddd;
+		        text-align: left; }
+		        .lb .shops .list-title li:first-of-type a {
+		          margin-left: 15px; }
+		    .lb .shops .shop-info {
+		      height: 59px;
+		      width: 100%;
+		      background: white; }
+		      .lb .shops .shop-info li {
+		        float: left;
+		        height: 57px;
+		        padding: 0 10px;
+		        line-height: 57px;
+		        text-align: center;
+		        vertical-align: middle;
+		        font-size: 12px;
+		        border: 1px solid #ddd;
+		        border-left: 0;
+		        width: 24px; }
+		        .lb .shops .shop-info li a {
+		          color: #111; }
+		        .lb .shops .shop-info li img {
+		          display: inline-block; }
+		      .lb .shops .shop-info li:first-of-type {
+		        border-left: 1px solid #ddd;
+		        text-align: left; }
+		        .lb .shops .shop-info li:first-of-type a {
+		          margin-left: 15px; }
+		  .lb .sure {
+		    width: 100%;
+		    height: 30px;
+		    vertical-align: middle; }
+		    .lb .sure .sel {
+		      width: 84px;
+		      height: 20px; }
+		    .lb .sure .qd {
+		      margin: 2px 2px;
+		      width: 62px;
+		      height: 26px;
+		      background: #ff3f3f;
+		      color: #FFF;
+		      border: 0;
+		      cursor: pointer;
+		      border-radius: 3px; }
+		  .lb .footer {
+		    background: #f3f3f3;
+		    border: 1px solid #ddd;
+		    padding: 15px;
+		    color: #9CACAF;
+		    margin: 10px 0;
+		    text-align: center;
+		    font-size: 12px; }
+		    .aa:hover{
+		    	background: rgb(39,130,150);
+		    }
+		</style>
+	</head>
+	<body>
+		<div class="lb">
+			<div class="head">
+				<h1>ECSHOP 管理中心 - 商品列表</h1>
+				<img src="/lbimg/jnsy.png"/>
+				<a href="javascript:;">添加新商品</a>
+			</div>
+			<div class="search">
+				<img src="/lbimg/icon_search.gif"/>
+				<select class="classify">
+					<option value="0">所有分类</option>
+					<option value="1">裤子</option>
+					<option value="2">鞋</option>
+				</select>
+				<select class="brand">
+					<option value="0">所有品牌</option>
+					<option value="1">阿迪达斯</option>
+					<option value="2">耐克</option>
+				</select>
+				<select class="all1">
+					<option value="0">全部</option>
+					<option value="1">精品</option>
+					<option value="2">新品</option>
+				</select>
+				<select class="all2">
+					<option value="0">全部</option>
+					<option value="1">上架</option>
+					<option value="2">下架</option>
+				</select>
+				<div class="key">
+					关键字<input type="text" id="keyword" />
+				</div>
+				<button type="button" class="btn">搜索</button>
+			</div>
+			<div class="shops">
+				<ul class="list-title">
+					<li style="width: 58px;">
+						<input type="checkbox" /><a href="#">编号</a>
+					</li>
+					<li style="width: 230px;"><a href="#">商品名称</a></li>
+					<li style="width: 85px;"><a href="#">货号</a></li>
+					<li style="width: 72px;"><a href="#">价格</a></li>
+					<li><a href="#">上架</a></li>
+					<li><a href="#">精品</a></li>
+					<li><a href="#">新品</a></li>
+					<li><a href="#">热销</a></li>
+					<li><a href="#">推荐排序</a></li>
+					<li><a href="#">库存</a></li>
+					<li><a href="#">虚拟销量</a></li>
+					<li style="width: 166px;"><a href="#">操作</a></li>
+				</ul>
+				<ul class="shop-info">
+					<li style="width: 58px;">
+						<input type="checkbox" /><a href="#">134</a>
+					</li>
+					<li style="width: 230px;"><a class="aa" style="color: red;"href="#">爱冕－白18K金钻石戒指</a></li>
+					<li style="width: 85px;"><a class="aa" href="#">ECS000000</a></li>
+					<li style="width: 72px;"><a class="aa" href="#">7013.00</a></li>
+					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
+					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
+					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
+					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
+					<li style="width: 48px;"><a href="#">1</a></li>
+					<li><a href="#">97</a></li>
+					<li style="width: 48px;"><a href="#">0</a></li>
+					<li style="width: 166px;">
+						<a href="javascript:;">
+							<img src="/lbimg/icon_edit.gif" width="21" height="21" border="0">
+						</a>
+						<a href="javascript:;">
+							<img src="/lbimg/icon_trash.gif" width="21" height="21" border="0">
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sure">
+				<select class="sel">
+					<option value="0">请选择...</option>
+					<option value="1">回收站</option>
+					<option value="2">上架</option>
+					<option value="3">下架</option>
+				</select>
+				<button type="button" class="qd">确定</button>
+			</div>
+			<div class="footer">
+				<p>共执行 7 个查询，用时 0.061004 秒，Gzip 已禁用，内存占用 3.549 MB</p>
+				<p>版权所有 © 2005-2018 上海商派软件有限公司，并保留所有权利。</p>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+	<script type="text/javascript">
+	    var toggle = true;
+	    $(".aaa").click(function(){
+	        if(toggle){
+				$(this).children("img").attr("src","/lbimg/no.gif");   
+	        }else{
+				$(this).children("img").attr("src","/lbimg/yes.gif");    
+	        }
+	        toggle = !toggle;
+	    });
+	</script>
+</html>

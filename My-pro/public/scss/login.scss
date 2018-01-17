@@ -1,0 +1,128 @@
+@charset "utf-8";
+@import "common";
+
+html,body{
+    height: 100%;
+}
+#banner{
+    width: 100%;
+    height: 100%;
+    background: url(../loginimg/banner.png) no-repeat center;
+    background-size: cover;
+    .logo{
+        height: 44px;
+        padding: 40px 0 40px 50px;
+    }
+    .center{
+        width: 442px;
+        position: absolute;
+        top: 15%;
+        left: 32%;
+        padding: 0 16.5px;
+        background: url(../loginimg/2.png) no-repeat bottom center;
+        .center-logo{
+            width: 380px;
+            margin: 0 auto;
+            img{
+                width: 248px;
+                height: 65px;
+                margin-left: 66px;
+            }
+        }
+        form{
+            width: 302px;
+            height: 322px;
+            background: rgba(255,255,255,.85);
+            padding:5px 70px 25px;
+            margin: 50px 0 42px 0;
+            .txt{
+                width: 300px;
+                height: 50px;
+                background: white;
+                box-shadow: inset 30px 30px 0 30px #fff;
+                line-height: 50px;
+                color: #8a8a8a;
+                border-top: 0;
+                border-left: 1px solid #ddd;
+                border-right: 1px solid #ddd;
+                border-bottom: 1px solid #ddd;
+                border-radius: 2px;
+                position: relative;
+                i{
+                    position: absolute;
+                    left: 15px;
+                    top: 15px;
+                    width: 20px;
+                    height: 20px;
+                    font-size: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                }
+                input{
+                    width: 250px;
+                    height: 50px;
+                    font-size: 12px;
+                    padding-left: 50px;
+                }
+                .yzm{
+                    width: 74px;
+                    height: 36px;
+                    background: #999;
+                    border: 1px solid #ddd;
+                    position: absolute;
+                    right: 5px;
+                    top: 7px;
+                    padding-left: 30px;
+                    font-size: 18px;
+                    color: red;
+                    font-weight: 900;
+                    line-height: 36px;
+                }
+            }
+            .txt:first-of-type{
+                margin-top: 50px;
+            }
+            .login,.regist{
+                    width: 300px;
+                    height: 50px;
+                    color: #FFF;
+                    font-size: 16px;
+                    line-height: 51px;
+                    text-align: center;
+                    background: #fc7878;
+                    border: 0;
+                    border-radius: 4px;
+                    letter-spacing: 4px;
+                    margin: 20px 1px;
+            }
+            .bot{
+                width: 100%;
+                height: 17px;
+                font-size: 12px;
+                color: #666;
+                line-height: 17px;
+                input{
+                    width: 15px;
+                    height: 15px;
+                    margin: 2px 8px 0 0;
+                    float: left;
+                }
+                span{
+                    float: left;
+                }
+                a{
+                    line-height: 17px;
+                    float: left;
+                    margin-left: 25px;
+                    color: #41A5E1;
+                }
+                a:last-of-type{
+                    float: right;
+                }
+                a:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

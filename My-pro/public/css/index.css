@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+ul, ol, li {
+  list-style: none; }
+
+a, u {
+  text-decoration: none; }
+
+img {
+  border: 0;
+  display: block; }
+
+i, em {
+  font-style: normal; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 16px;
+  font-weight: 100; }
+
+.clearfix:after {
+  content: ".";
+  clear: both;
+  height: 0;
+  display: block;
+  overflow: hidden;
+  visibility: hidden; }
+
+html, body {
+  height: 100%; }
+
+#top {
+  height: 76px;
+  background: #303030; }
+  #top .logo {
+    width: 262px;
+    height: 45px;
+    margin-left: 30px;
+    margin-top: 20px;
+    float: left; }
+  #top .nav {
+    float: right; }
+    #top .nav li {
+      float: left; }
+      #top .nav li a {
+        float: left;
+        height: 67px;
+        padding-top: 8px;
+        text-align: center; }
+        #top .nav li a img {
+          height: 35px;
+          margin: auto; }
+        #top .nav li a span {
+          display: block;
+          width: 82px;
+          font-size: 12px;
+          line-height: 16px;
+          color: white;
+          margin-top: 6px; }
+      #top .nav li a:hover {
+        background: #575757; }
+
+#menu {
+  background: #575757;
+  height: 41px;
+  border-bottom: 1px solid #212121; }
+  #menu .menu li:first-of-type {
+    margin-left: 20px; }
+  #menu .menu li {
+    float: left; }
+    #menu .menu li a {
+      float: left;
+      height: 16px;
+      padding: 13px 10px 12px;
+      font-size: 12px;
+      line-height: 16px;
+      color: white; }
+      #menu .menu li a img {
+        float: left; }
+      #menu .menu li a span {
+        float: left;
+        display: block;
+        font-size: 12px;
+        color: white;
+        line-height: 16px;
+        border-right: 1px solid #656565;
+        padding: 0 10px;
+        padding-right: 20px; }
+    #menu .menu li a:hover {
+      background: #303030; }
+
+#main {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 118px;
+  bottom: 0;
+  overflow: auto; }
+  #main .nav-ul {
+    width: 180px;
+    height: 100%;
+    float: left;
+    overflow: auto; }
+    #main .nav-ul li {
+      width: 123px;
+      height: auto; }
+      #main .nav-ul li span {
+        width: 100%;
+        display: block;
+        border-top: 1px solid #7f7f7f;
+        color: white;
+        line-height: 42px;
+        background: #575757 url(../lbimg/menu_1.png) no-repeat 9px 0;
+        padding-left: 40px;
+        font-size: 12px;
+        cursor: pointer; }
+      #main .nav-ul li span:hover {
+        background-color: #333; }
+      #main .nav-ul li .nav-box {
+        display: none;
+        width: 163px; }
+        #main .nav-ul li .nav-box li {
+          width: 163px;
+          height: 30px; }
+          #main .nav-ul li .nav-box li a {
+            display: block;
+            width: 123px;
+            height: 30px;
+            background: #575757;
+            font-size: 12px;
+            color: #d7d7d7;
+            padding-left: 40px;
+            line-height: 30px; }
+          #main .nav-ul li .nav-box li a:hover {
+            color: white;
+            background: #797979; }
+  #main .main-r {
+    width: auto;
+    height: 100%;
+    position: relative;
+    right: 0;
+    overflow: hidden; }
+    #main .main-r iframe {
+      background: url(../lbimg/body_bj.jpg); }
+    #main .main-r .lb {
+      overflow: auto;
+      min-width: 773px;
+      padding: 10px;
+      background: url(../lbimg/body_bj.jpg); }
+      #main .main-r .lb .head {
+        height: 27px;
+        padding: 7px 10px;
+        border-bottom: 1px solid #ccc;
+        color: #333;
+        margin-bottom: 10px; }
+        #main .main-r .lb .head h1 {
+          height: 27px;
+          font-size: 18px;
+          float: left; }
+        #main .main-r .lb .head img {
+          width: 110px;
+          height: 26px;
+          float: left;
+          margin-left: 20px; }
+        #main .main-r .lb .head a {
+          float: right;
+          width: 110px;
+          height: 26px;
+          line-height: 26px;
+          font-size: 13px;
+          color: white;
+          text-align: center;
+          margin-right: 20px;
+          background: #c43926 url(../lbimg/icon_add02.gif) no-repeat 6px center; }
+      #main .main-r .lb .search {
+        height: 30px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        line-height: 30px;
+        font-size: 16px;
+        margin-bottom: 10px; }
+        #main .main-r .lb .search img {
+          float: left;
+          width: 26px;
+          height: 22px;
+          margin-top: 5px; }
+        #main .main-r .lb .search .classify {
+          width: 158px;
+          height: 20px;
+          float: left;
+          margin-top: 6px;
+          margin-left: 2px; }
+        #main .main-r .lb .search .brand {
+          width: 105px;
+          height: 20px;
+          float: left;
+          margin-top: 6px;
+          margin-left: 2px; }
+        #main .main-r .lb .search .all1 {
+          width: 72px;
+          height: 20px;
+          float: left;
+          margin-top: 6px;
+          margin-left: 2px; }
+        #main .main-r .lb .search .all2 {
+          width: 48px;
+          height: 20px;
+          float: left;
+          margin-top: 6px;
+          margin-left: 2px; }
+        #main .main-r .lb .search .key {
+          float: left;
+          font-size: 12px;
+          color: #aaa;
+          margin-left: 2px;
+          height: 30px; }
+          #main .main-r .lb .search .key #keyword {
+            width: 103px;
+            height: 20px;
+            margin-top: 4px; }
+        #main .main-r .lb .search .btn {
+          float: left;
+          width: 62px;
+          height: 26px;
+          text-align: center;
+          line-height: 26px;
+          background: #ff3f3f;
+          border-radius: 3px;
+          border: 0;
+          color: white;
+          margin-top: 3px;
+          margin-left: 2px; }
+      #main .main-r .lb .shops {
+        width: 100%;
+        background: white; }
+        #main .main-r .lb .shops .list-title {
+          height: 45px;
+          width: 100%;
+          background: #ddd; }
+          #main .main-r .lb .shops .list-title li {
+            float: left;
+            height: 43px;
+            padding: 0 10px;
+            line-height: 43px;
+            text-align: center;
+            font-size: 12px;
+            background: #f3f3f3;
+            border: 1px solid #ddd;
+            border-left: 0; }
+            #main .main-r .lb .shops .list-title li a {
+              color: #111; }
+          #main .main-r .lb .shops .list-title li:first-of-type {
+            border-left: 1px solid #ddd;
+            text-align: left; }
+            #main .main-r .lb .shops .list-title li:first-of-type a {
+              margin-left: 15px; }
+        #main .main-r .lb .shops .shop-info {
+          height: 59px;
+          width: 100%;
+          background: white; }
+          #main .main-r .lb .shops .shop-info li {
+            float: left;
+            height: 57px;
+            padding: 0 10px;
+            line-height: 57px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-left: 0;
+            width: 24px; }
+            #main .main-r .lb .shops .shop-info li a {
+              color: #111; }
+            #main .main-r .lb .shops .shop-info li img {
+              display: inline-block; }
+          #main .main-r .lb .shops .shop-info li:first-of-type {
+            border-left: 1px solid #ddd;
+            text-align: left; }
+            #main .main-r .lb .shops .shop-info li:first-of-type a {
+              margin-left: 15px; }
+      #main .main-r .lb .sure {
+        width: 100%;
+        height: 30px;
+        vertical-align: middle; }
+        #main .main-r .lb .sure .sel {
+          width: 84px;
+          height: 20px; }
+        #main .main-r .lb .sure .qd {
+          margin: 2px 2px;
+          width: 62px;
+          height: 26px;
+          background: #ff3f3f;
+          color: #FFF;
+          border: 0;
+          cursor: pointer;
+          border-radius: 3px; }
+      #main .main-r .lb .footer {
+        background: #f3f3f3;
+        border: 1px solid #ddd;
+        padding: 15px;
+        color: #9CACAF;
+        margin: 10px 0;
+        text-align: center;
+        font-size: 12px; }
+
+/*# sourceMappingURL=index.css.map */

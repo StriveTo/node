@@ -82,7 +82,7 @@
 		<div id="menu">
 			<ul class="menu">
 				<li>
-					<a href="javascript:;" class="index">
+					<a href="/ECSHOP/ECSHOP 管理中心.htm" target="content">
 						<img src="lbimg/index-11_07.png"/>
 						<span>起始页</span>
 					</a>
@@ -145,10 +145,10 @@
                 	<span>商品管理</span>
                 	<ul class="nav-box">
                 		<li>
-                			<a href="javascript:;" class="add" >商品列表</a>
+                			<a href="/ECSHOP/lb.html" target="content" >商品列表</a>
                 		</li>
                 		<li>
-                			<a href="javascript:;">添加新商品</a>
+                			<a href="/ECSHOP/addgoods.html" target="content">添加新商品</a>
                 		</li>
                 		<li>
                 			<a href="javascript:;">商品列表</a>
@@ -703,95 +703,7 @@
                 </li>
 			</ul>
 			<div class="main-r">
-				<iframe src="/ECSHOP/ECSHOP 管理中心.htm" width="100%" height="100%"></iframe>
-				<div class="lb">
-					<div class="head">
-						<h1>ECSHOP 管理中心 - 商品列表</h1>
-						<img src="lbimg/jnsy.png"/>
-						<a href="javascript:;">添加新商品</a>
-					</div>
-					<div class="search">
-						<img src="lbimg/icon_search.gif"/>
-						<select class="classify">
-							<option value="0">所有分类</option>
-							<option value="1">裤子</option>
-							<option value="2">鞋</option>
-						</select>
-						<select class="brand">
-							<option value="0">所有品牌</option>
-							<option value="1">阿迪达斯</option>
-							<option value="2">耐克</option>
-						</select>
-						<select class="all1">
-							<option value="0">全部</option>
-							<option value="1">精品</option>
-							<option value="2">新品</option>
-						</select>
-						<select class="all2">
-							<option value="0">全部</option>
-							<option value="1">上架</option>
-							<option value="2">下架</option>
-						</select>
-						<div class="key">
-							关键字<input type="text" id="keyword" />
-						</div>
-						<button type="button" class="btn">搜索</button>
-					</div>
-					<div class="shops">
-						<ul class="list-title">
-							<li style="width: 58px;">
-								<input type="checkbox" /><a href="#">编号</a>
-							</li>
-							<li style="width: 230px;"><a href="#">商品名称</a></li>
-							<li style="width: 85px;"><a href="#">货号</a></li>
-							<li style="width: 72px;"><a href="#">价格</a></li>
-							<li><a href="#">上架</a></li>
-							<li><a href="#">精品</a></li>
-							<li><a href="#">新品</a></li>
-							<li><a href="#">热销</a></li>
-							<li><a href="#">推荐排序</a></li>
-							<li><a href="#">库存</a></li>
-							<li><a href="#">虚拟销量</a></li>
-							<li style="width: 166px;"><a href="#">操作</a></li>
-						</ul>
-						<ul class="shop-info">
-							<li style="width: 58px;">
-								<input type="checkbox" /><a href="#">134</a>
-							</li>
-							<li style="width: 230px;"><a style="color: red;"href="#">爱冕－白18K金钻石戒指</a></li>
-							<li style="width: 85px;"><a href="#">ECS000000</a></li>
-							<li style="width: 72px;"><a href="#">7013.00</a></li>
-							<li><a href="#"><img src="lbimg/yes.gif"/></a></li>
-							<li><a href="#"><img src="lbimg/yes.gif"/></a></li>
-							<li><a href="#"><img src="lbimg/yes.gif"/></a></li>
-							<li><a href="#"><img src="lbimg/yes.gif"/></a></li>
-							<li style="width: 48px;"><a href="#">1</a></li>
-							<li><a href="#">97</a></li>
-							<li style="width: 48px;"><a href="#">0</a></li>
-							<li style="width: 166px;">
-								<a href="javascript:;">
-									<img src="lbimg/icon_edit.gif" width="21" height="21" border="0">
-								</a>
-								<a href="javascript:;">
-									<img src="lbimg/icon_trash.gif" width="21" height="21" border="0">
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="sure">
-						<select class="sel">
-							<option value="0">请选择...</option>
-							<option value="1">回收站</option>
-							<option value="2">上架</option>
-							<option value="3">下架</option>
-						</select>
-						<button type="button" class="qd">确定</button>
-					</div>
-					<div class="footer">
-						<p>共执行 7 个查询，用时 0.061004 秒，Gzip 已禁用，内存占用 3.549 MB</p>
-						<p>版权所有 © 2005-2018 上海商派软件有限公司，并保留所有权利。</p>
-					</div>
-				</div>
+				<iframe id="content" name="content" src="/ECSHOP/ECSHOP 管理中心.htm" width="100%" height="100%"></iframe>
 			</div>
 		</div>
 	</body>
@@ -827,11 +739,5 @@
 //				"color" : "#d7d7d7"
 //			})
 //		})
-		$(".add").click(function(){
-			$("iframe").hide().siblings(".lb").show();
-		})
-		$(".index").click(function(){
-			$("iframe").show().siblings(".lb").hide();
-		})
 	</script>
 </html>

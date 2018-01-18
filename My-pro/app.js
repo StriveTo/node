@@ -10,6 +10,7 @@ mongoose.connect('mongodb://localhost/zkj');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var goods = require('./routes/goods');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use(session({
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/goods', goods);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

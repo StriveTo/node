@@ -227,12 +227,12 @@
 				<ul class="main-ul">
 					<li>
 						<p>商品名称：</p>
-						<input style="width: 192px;" type="text"/>
+						<input id="goods-name" style="width: 192px;" type="text"/>
 					</li>
 					<li class="lip" style="height: 50px;">
 						<p><img src="../lbimg/notice.gif"/>商品货号：</p>
 						<section>
-							<input type="text" />
+							<input id="goods-item" type="text" />
 							<span>如果您不输入商品货号，系统将自动生成一个唯一的货号。</span>
 						</section>
 					</li>
@@ -268,7 +268,7 @@
 					</li>
 					<li>
 						<p>本店售价：</p>
-						<input type="text" value="0" />
+						<input id="goods-price" type="text" value="0" />
 						<input class="btn3" type="button" value="按市场价计算" />
 					</li>
 					<li class="lip" style="height: 50px;">
@@ -296,13 +296,13 @@
 						
 					</li>
 					<li>
-						<p>市场售价：</p>
-						<input type="text" value="0"/>
+						<p>推荐排序：</p>
+						<input id="goods-sort" type="text" value="0"/>
 						<input class="btn3" type="button" value="取整数"/>
 					</li>
 					<li>
 						<p>虚拟销量：</p>
-						<input type="text" value="0"/>
+						<input id="goods-sales" type="text" value="0"/>
 					</li>
 					<li class="lip" style="height: 50px;">
 						<p><img src="../lbimg/notice.gif"/>赠送消费积分数：</p>
@@ -331,9 +331,9 @@
 					<li>
 						<p>
 							<input type="checkbox" />
-							促销价：
+							库存：
 						</p>
-						<input type="text" value="0"/>
+						<input id="goods-stock" type="text" value="0"/>
 					</li>
 					<li>
 						<p>促销日期：</p>
@@ -360,7 +360,7 @@
 						
 					</li>
 					<li style="height: 36px;margin-left: 350px;">
-						<input class="btn2" type="button" value="确定" />
+						<input onclick="addgoods()" class="btn2" type="button" value="确定" />
 						<input class="btn2" type="button" value="重置" />
 					</li>
 				</ul>
@@ -372,4 +372,30 @@
 			</div>
 		</div>	
 	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+	<script type="text/javascript">
+		function addgoods(){
+			$.ajax({
+				type:"post",
+				url:"/api/addgoods",
+				data:{
+					goodsname: $("#goods-name").val(),
+					goodsitem: $("#goods-item").val(),
+					goodsprice: $("#goods-price").val(),
+					goodssort: $("#goods-sort").val(),
+					goodssales: $("#goods-sales").val(),
+					goodsstock: $("#goods-stock").val()
+				},
+				async:true,
+				success: function(res){
+					console.log(res);
+					if(res.code = 1){
+						alert(res.message);
+					}else{
+						alert(res.message);
+					}
+				}
+			});
+		}
+	</script>
 </html>

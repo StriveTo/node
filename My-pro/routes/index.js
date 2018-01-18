@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var UserModel = require("../model/User");
+var GoodsModel = require("../model/Goods");
 var md5 = require("md5");
 
 /* GET home page. */
@@ -67,6 +68,48 @@ router.post("/api/loginajax",function(req,res){
 			console.log(req.session);
 		}
 		res.json(result);
+	})
+})
+
+//添加商品
+router.post("/api/addgoods",function(req,res){
+	var goodsname = req.body.goodsname;
+	var goodsitem = req.body.goodsitem;
+	var goodsprice = req.body.goodsprice;
+	var goodssort = req.body.goodssort;
+	var goodssales = req.body.goodssales;
+	var goodsstock = req.body.goodsstock;
+	var result = {
+		code : 1,
+		message : "商品添加成功"
+	}
+	GoodsModel.find({goodsname : goodsname},function(err,docs){
+		if(docs.length > 0){
+			result.code = -200;
+			result.message = "商品已上架,请重新输入";
+			res.json(result);
+			return;
+		}
+		var gm = new GoodsModel();
+		gm.goodsname = goodsname;
+		gm.goodsitem = goodsitem;
+		gm.goodsprice = goodsprice;
+		gm.goodssort = goodssort;
+		gm.goodssales = goodssales;
+		gm.goodsstock = goodsstock;
+		gm.save(function(err){
+			if(err){
+				result.code = -199;
+				result.message = "商品添加失败";
+			}
+			res.json(result);
+		})
+	})
+})
+//列表
+router.post("/api/lb",function(req,res){
+	GoodsModel.find(function(err,docs){
+		res.json(docs);
 	})
 })
 module.exports = router;

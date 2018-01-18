@@ -36,6 +36,7 @@
 			.lb {
 		  overflow: auto;
 		  min-width: 773px;
+		  width: auto;
 		  padding: 10px;
 		  background: url(/lbimg/body_bj.jpg); }
 		  .lb .head {
@@ -122,7 +123,6 @@
 		      margin-top: 3px;
 		      margin-left: 2px; }
 		  .lb .shops {
-		    width: 100%;
 		    background: white; }
 		    .lb .shops .list-title {
 		      height: 45px;
@@ -146,8 +146,8 @@
 		        .lb .shops .list-title li:first-of-type a {
 		          margin-left: 15px; }
 		    .lb .shops .shop-info {
-		      height: 59px;
 		      width: 100%;
+		      display: block;
 		      background: white; }
 		      .lb .shops .shop-info li {
 		        float: left;
@@ -164,11 +164,6 @@
 		          color: #111; }
 		        .lb .shops .shop-info li img {
 		          display: inline-block; }
-		      .lb .shops .shop-info li:first-of-type {
-		        border-left: 1px solid #ddd;
-		        text-align: left; }
-		        .lb .shops .shop-info li:first-of-type a {
-		          margin-left: 15px; }
 		  .lb .sure {
 		    width: 100%;
 		    height: 30px;
@@ -196,6 +191,22 @@
 		    .aa:hover{
 		    	background: rgb(39,130,150);
 		    }
+		    .page{
+	            text-align: right;
+	            border: 1px solid #eee;
+	            line-height: 45px;
+	            font-size: 12px;
+	        }    
+	        .page a{
+	                color: black;
+	        }
+	        .page select{
+	            margin-right: 120px;
+	        }
+	        #count{
+                width: 33px !important;
+                text-align: center;
+	        }
 		</style>
 	</head>
 	<body>
@@ -237,7 +248,7 @@
 					<li style="width: 58px;">
 						<input type="checkbox" /><a href="#">编号</a>
 					</li>
-					<li style="width: 230px;"><a href="#">商品名称</a></li>
+					<li style="width: 20%;"><a href="#">商品名称</a></li>
 					<li style="width: 85px;"><a href="#">货号</a></li>
 					<li style="width: 72px;"><a href="#">价格</a></li>
 					<li><a href="#">上架</a></li>
@@ -249,29 +260,26 @@
 					<li><a href="#">虚拟销量</a></li>
 					<li style="width: 166px;"><a href="#">操作</a></li>
 				</ul>
-				<ul class="shop-info">
-					<li style="width: 58px;">
-						<input type="checkbox" /><a href="#">134</a>
-					</li>
-					<li style="width: 230px;"><a class="aa" style="color: red;"href="#">爱冕－白18K金钻石戒指</a></li>
-					<li style="width: 85px;"><a class="aa" href="#">ECS000000</a></li>
-					<li style="width: 72px;"><a class="aa" href="#">7013.00</a></li>
-					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
-					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
-					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
-					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
-					<li style="width: 48px;"><a href="#">1</a></li>
-					<li><a href="#">97</a></li>
-					<li style="width: 48px;"><a href="#">0</a></li>
-					<li style="width: 166px;">
-						<a href="javascript:;">
-							<img src="/lbimg/icon_edit.gif" width="21" height="21" border="0">
-						</a>
-						<a href="javascript:;">
-							<img src="/lbimg/icon_trash.gif" width="21" height="21" border="0">
-						</a>
-					</li>
+				<ul class="shop-info clearfix">
+					
+					
 				</ul>
+				<div class="page">
+						总共
+						<span class="all"></span>
+						页当前第
+						<span class="pageNow">1</span>
+						页，每页 
+						<input type="text" id="count" value=""/>
+						个商品
+						<a href="javascript:;">第一页</a>
+						<a href="javascript:;">上一页</a>
+						<a href="javascript:;">下一页</a>
+						<a href="javascript:;">最末页</a>
+						<select name="">
+							<option value="">1</option>
+						</select>
+					</div>
 			</div>
 			<div class="sure">
 				<select class="sel">
@@ -290,14 +298,144 @@
 	</body>
 	<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
 	<script type="text/javascript">
-	    var toggle = true;
-	    $(".aaa").click(function(){
-	        if(toggle){
-				$(this).children("img").attr("src","/lbimg/no.gif");   
-	        }else{
-				$(this).children("img").attr("src","/lbimg/yes.gif");    
-	        }
-	        toggle = !toggle;
-	    });
+//	    $.ajax({
+//	    	type:"post",
+//	    	url:"/api/lb",
+//	    	async:true,
+//	    	success:function(res){
+//	    		console.log(res);
+//	    		$.each(res,function(index,value){
+////	    			var goods = JSON.parse(value);
+////	    			console.log(value.goodsname);
+//					$(".shop-info").append(`
+//					<li style="width: 58px;">
+//						<input type="checkbox" />
+//						<a href="#">134</a>
+//					</li>
+//						<li style="width: 20%;"><a class="aa" style="color: red;"href="#">${value.goodsname}</a></li>
+//					<li style="width: 85px;"><a class="aa" href="#">${value.goodsitem}</a></li>
+//					<li style="width: 72px;"><a class="aa" href="#">${value.goodsprice}</a></li>
+//					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
+//					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
+//					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
+//					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
+//					<li style="width: 48px;"><a class="aa" href="#">${value.goodssort}</a></li>
+//					<li><a class="aa" href="#">${value.goodsstock}</a></li>
+//					<li style="width: 48px;"><a class="aa" href="#">${value.goodssales}</a></li>
+//					<li style="width: 166px;">
+//						<a href="javascript:;">
+//							<img src="/lbimg/icon_edit.gif" width="21" height="21" border="0">
+//						</a>
+//						<a href="javascript:;">
+//							<img src="/lbimg/icon_trash.gif" width="21" height="21" border="0">
+//						</a>
+//					</li>`)
+//					
+//	    		})
+//	    		$(".aaa").each(function(index,value){
+//						value.toggle = true;
+//					})
+//				    $(".aaa").click(function(){
+//				    	if(this.toggle){
+//							$(this).children("img").attr("src","/lbimg/no.gif");   
+//				        }else{
+//							$(this).children("img").attr("src","/lbimg/yes.gif");    
+//				        }
+//				        this.toggle = !this.toggle;
+//				    });
+//	    	}
+//	    });
+		findgoods(5,1);
+		$(".btn").click(function(){
+			$(".shop-info li").remove();
+			findgoods($("#count").val(),1,$("#keyword").val());
+		})
+		$(".page a").eq(2).click(function(){
+			$(".shop-info li").remove();
+			var pageSum = $(".all").html();
+			var page = $(".pageNow").html();
+			//page ++;
+			//if(page >= pageSum){
+				//page = pageSum;
+			//}
+			//findgoods($("#count").val(),page,$("#keyword").val());
+			if(page < pageSum){
+				findgoods($("#count").val(), ++ page,$("#keyword").val());
+			}else{
+				findgoods($("#count").val(),pageSum,$("#keyword").val());
+			}
+		})
+		$(".page a").eq(1).click(function(){
+			$(".shop-info li").remove();
+			var page = $(".pageNow").html();
+			if(page > 1){
+				findgoods($("#count").val(),-- page,$("#keyword").val());
+			}else{
+				findgoods($("#count").val(),1,$("#keyword").val());
+			}
+		})
+		$(".page a").eq(0).click(function(){
+			$(".shop-info li").remove();
+			findgoods($("#count").val(),1,$("#keyword").val());
+		})
+		$(".page a").eq(3).click(function(){
+			var pageSum = $(".all").html();
+			$(".shop-info li").remove();
+			findgoods($("#count").val(),pageSum,$("#keyword").val());
+		})
+	    function findgoods(perPage,page,word){
+	    	$.ajax({
+	    		type:"post",
+	    		url:"/goods/list",
+	    		async:true,
+	    		data:{
+	    			keyword : word,
+	    			perPageCnt : perPage,
+	    			page : page
+	    		},
+	    		success:function(res){
+//	    			console.log(res.data);
+	    			$(".all").html(Math.ceil(res.total / res.perPageCnt));
+	    			$(".pageNow").html(res.page);
+	  				$.each(res.data,function(index,value){
+//	  					console.log(value.goodsname);
+	  					$(".shop-info").append(`
+					<li style="width: 58px;">
+						<input type="checkbox" />
+						<a href="#">134</a>
+					</li>
+						<li style="width: 20%;"><a class="aa" style="color: red;"href="#">${value.goodsname}</a></li>
+					<li style="width: 85px;"><a class="aa" href="#">${value.goodsitem}</a></li>
+					<li style="width: 72px;"><a class="aa" href="#">${value.goodsprice}</a></li>
+					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
+					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
+					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
+					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
+					<li style="width: 48px;"><a class="aa" href="#">${value.goodssort}</a></li>
+					<li><a class="aa" href="#">${value.goodsstock}</a></li>
+					<li style="width: 48px;"><a class="aa" href="#">${value.goodssales}</a></li>
+					<li style="width: 166px;">
+						<a href="javascript:;">
+							<img src="/lbimg/icon_edit.gif" width="21" height="21" border="0">
+						</a>
+						<a href="javascript:;">
+							<img src="/lbimg/icon_trash.gif" width="21" height="21" border="0">
+						</a>
+					</li>`)
+	  				});
+	  				$(".aaa").each(function(index,value){
+						value.toggle = true;
+					})
+				    $(".aaa").click(function(){
+				    	if(this.toggle){
+							$(this).children("img").attr("src","/lbimg/no.gif");   
+				        }else{
+							$(this).children("img").attr("src","/lbimg/yes.gif");    
+				        }
+				        this.toggle = !this.toggle;
+				    });
+				}
+	    	});
+	    }
 	</script>
 </html>

@@ -397,5 +397,37 @@
 				}
 			});
 		}
+		function getvalue(){    
+		    var str=window.location.search;//location.search是从当前URL的?号开始的字符串     
+//		    console.log(str);
+		    var str1 = str.replace("?","");
+//		    console.log(str1);
+		    var arr1 = str1.split("&");
+		    console.log(arr1);
+		    var arr2 = new Object();
+		    for(i in arr1){
+		    	var keyAndValue = arr1[i].split("=");
+		    	console.log(keyAndValue);
+		    	arr2[keyAndValue[0]] = keyAndValue[1];
+		    }
+		    console.log(arr2.name);
+		    $("#goods-name").val(arr2.name);
+		    $("#goods-item").val(arr2.item);
+		    $("#goods-price").val(arr2.price);
+		    $("#goods-sort").val(arr2.sort);
+		    $("#goods-sales").val(arr2.sales);
+		    $("#goods-stock").val(arr2.stock);
+//          var i=url.indexOf('?');
+//          if(i==-1)return;
+//          var querystr=url.substr(i+1);
+//          var arr1=querystr.split('&');
+//          var arr2=new Object();
+//          for  (i in arr1){
+//              var ta=arr1[i].split('=');
+//              arr2[ta[0]]=ta[1];
+//          }
+//          return arr2;
+		}
+		getvalue();
 	</script>
 </html>

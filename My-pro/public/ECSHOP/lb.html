@@ -201,7 +201,7 @@
 	                color: black;
 	        }
 	        .page select{
-	            margin-right: 120px;
+	            margin-right: 20px;
 	        }
 	        #count{
                 width: 33px !important;
@@ -260,10 +260,10 @@
 					<li><a href="#">虚拟销量</a></li>
 					<li style="width: 166px;"><a href="#">操作</a></li>
 				</ul>
-				<ul class="shop-info clearfix">
+				<div class="shop-goods">
 					
-					
-				</ul>
+				
+				</div>
 				<div class="page">
 						总共
 						<span class="all"></span>
@@ -297,6 +297,7 @@
 		</div>
 	</body>
 	<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+	
 	<script type="text/javascript">
 //	    $.ajax({
 //	    	type:"post",
@@ -347,11 +348,11 @@
 //	    });
 		findgoods(5,1);
 		$(".btn").click(function(){
-			$(".shop-info li").remove();
+			$(".shop-info").remove();
 			findgoods($("#count").val(),1,$("#keyword").val());
 		})
 		$(".page a").eq(2).click(function(){
-			$(".shop-info li").remove();
+			$(".shop-info").remove();
 			var pageSum = $(".all").html();
 			var page = $(".pageNow").html();
 			//page ++;
@@ -366,7 +367,7 @@
 			}
 		})
 		$(".page a").eq(1).click(function(){
-			$(".shop-info li").remove();
+			$(".shop-info").remove();
 			var page = $(".pageNow").html();
 			if(page > 1){
 				findgoods($("#count").val(),-- page,$("#keyword").val());
@@ -375,12 +376,12 @@
 			}
 		})
 		$(".page a").eq(0).click(function(){
-			$(".shop-info li").remove();
+			$(".shop-info").remove();
 			findgoods($("#count").val(),1,$("#keyword").val());
 		})
 		$(".page a").eq(3).click(function(){
 			var pageSum = $(".all").html();
-			$(".shop-info li").remove();
+			$(".shop-info").remove();
 			findgoods($("#count").val(),pageSum,$("#keyword").val());
 		})
 	    function findgoods(perPage,page,word){
@@ -399,29 +400,31 @@
 	    			$(".pageNow").html(res.page);
 	  				$.each(res.data,function(index,value){
 //	  					console.log(value.goodsname);
-	  					$(".shop-info").append(`
+	  					$(".shop-goods").append(`
+	  			<ul class="shop-info clearfix">
 					<li style="width: 58px;">
 						<input type="checkbox" />
 						<a href="#">134</a>
 					</li>
-						<li style="width: 20%;"><a class="aa" style="color: red;"href="#">${value.goodsname}</a></li>
-					<li style="width: 85px;"><a class="aa" href="#">${value.goodsitem}</a></li>
-					<li style="width: 72px;"><a class="aa" href="#">${value.goodsprice}</a></li>
+						<li style="width: 20%;"><a class="aa goodsname" style="color: red;"href="#">${value.goodsname}</a></li>
+					<li style="width: 85px;"><a class="aa goodsitem" href="#">${value.goodsitem}</a></li>
+					<li style="width: 72px;"><a class="aa goodsprice" href="#">${value.goodsprice}</a></li>
 					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
 					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
 					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
 					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
-					<li style="width: 48px;"><a class="aa" href="#">${value.goodssort}</a></li>
-					<li><a class="aa" href="#">${value.goodsstock}</a></li>
-					<li style="width: 48px;"><a class="aa" href="#">${value.goodssales}</a></li>
+					<li style="width: 48px;"><a class="aa goodssort" href="#">${value.goodssort}</a></li>
+					<li><a class="aa goodsstock" href="#">${value.goodsstock}</a></li>
+					<li style="width: 48px;"><a class="aa goodssales" href="#">${value.goodssales}</a></li>
 					<li style="width: 166px;">
-						<a href="javascript:;">
+						<a id="edit" href="javascript:;">
 							<img src="/lbimg/icon_edit.gif" width="21" height="21" border="0">
 						</a>
-						<a href="javascript:;">
+						<a id="del" href="javascript:;">
 							<img src="/lbimg/icon_trash.gif" width="21" height="21" border="0">
 						</a>
-					</li>`)
+					</li>
+				</ul>`)
 	  				});
 	  				$(".aaa").each(function(index,value){
 						value.toggle = true;
@@ -434,6 +437,18 @@
 				        }
 				        this.toggle = !this.toggle;
 				    });
+				    $("#edit").click(function(){
+				    	var goodN = $(".goodsname").html();
+				    	var goodI = $(".goodsitem").html();
+				    	var goodP = $(".goodsprice").html();
+				    	var goodST = $(".goodssort").html();
+				    	var goodSK = $(".goodsstock").html();
+				    	var goodSL= $(".goodssales").html();
+				    	location.href = './addgoods.html?name='+ goodN + "&item=" + goodI + "&price=" + goodP + "&sort=" + goodST + "&stock=" + goodSK + "&sales=" + goodSL;
+				    })
+				    $("#del").click(function(){
+				    	$(this).parent().parent().remove();
+				    })
 				}
 	    	});
 	    }

@@ -5,14 +5,15 @@ var GoodsModel = require("../model/Goods");
 router.get('/add', function(req, res, next) {
   res.send('respond with a resource');
 });
-
+//模糊查询和翻页
 router.post('/list', function(req, res, next) {
 	var keword = null;
-	if(req.body.keyword){
-		keword = {goodsname: {$regex: req.body.keyword}}
-	}else{
-		keword = {};
-	}
+//	if(req.body.keyword){
+//		keword = {goodsname: {$regex: req.body.keyword}}
+//	}else{
+//		keword = {};
+//	}
+	keword = {"flag" : 1,"goodsname": {$regex: req.body.keyword}}
 	// 注意代码的健壮性
 	// 测试中，有异常系测试。 后端最头疼的是异常系测试。
 	var page = req.body.page || 1;
@@ -35,5 +36,20 @@ router.post('/list', function(req, res, next) {
 		});
 	})
 });
+//删除商品
+router.post("/api/remove",function(req,res){
+	var goodN = req.body.goodN;
+	var result = {
+		code : 1,
+		message : "商品删除成功"
+	}
+	GoodsModel.update({goodsname : goodN},{$set:{"flag":0}},function(err){
+		if(err){
+			result.code = -300;
+			result.message = "商品删除失败";
+		}
+		res.json(result);
+	})
+})
 
 module.exports = router;

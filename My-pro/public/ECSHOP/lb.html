@@ -346,7 +346,7 @@
 //				    });
 //	    	}
 //	    });
-		findgoods(5,1);
+		findgoods(5,1,$("#keyword").val());
 		$(".btn").click(function(){
 			$(".shop-info").remove();
 			findgoods($("#count").val(),1,$("#keyword").val());
@@ -390,9 +390,9 @@
 	    		url:"/goods/list",
 	    		async:true,
 	    		data:{
-	    			keyword : word,
 	    			perPageCnt : perPage,
-	    			page : page
+	    			page : page,
+	    			keyword : word
 	    		},
 	    		success:function(res){
 //	    			console.log(res.data);
@@ -406,21 +406,21 @@
 						<input type="checkbox" />
 						<a href="#">134</a>
 					</li>
-						<li style="width: 20%;"><a class="aa goodsname" style="color: red;"href="#">${value.goodsname}</a></li>
-					<li style="width: 85px;"><a class="aa goodsitem" href="#">${value.goodsitem}</a></li>
-					<li style="width: 72px;"><a class="aa goodsprice" href="#">${value.goodsprice}</a></li>
+					<li class="goodsname" style="width: 20%;"><a class="aa" style="color: red;"href="#">${value.goodsname}</a></li>
+					<li class="goodsitem" style="width: 85px;"><a class="aa" href="#">${value.goodsitem}</a></li>
+					<li class="goodsprice" style="width: 72px;"><a class="aa" href="#">${value.goodsprice}</a></li>
 					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
 					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
 					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
 					<li><a class="aaa" href="javascript:;"><img src="/lbimg/yes.gif"/></a></li>
-					<li style="width: 48px;"><a class="aa goodssort" href="#">${value.goodssort}</a></li>
-					<li><a class="aa goodsstock" href="#">${value.goodsstock}</a></li>
-					<li style="width: 48px;"><a class="aa goodssales" href="#">${value.goodssales}</a></li>
+					<li class="goodssort" style="width: 48px;"><a class="aa" href="#">${value.goodssort}</a></li>
+					<li class="goodsstock"><a class="aa" href="#">${value.goodsstock}</a></li>
+					<li class="goodssales" style="width: 48px;"><a class="aa" href="#">${value.goodssales}</a></li>
 					<li style="width: 166px;">
-						<a id="edit" href="javascript:;">
+						<a class="edit" href="javascript:;">
 							<img src="/lbimg/icon_edit.gif" width="21" height="21" border="0">
 						</a>
-						<a id="del" href="javascript:;">
+						<a class="del" href="javascript:;">
 							<img src="/lbimg/icon_trash.gif" width="21" height="21" border="0">
 						</a>
 					</li>
@@ -437,17 +437,35 @@
 				        }
 				        this.toggle = !this.toggle;
 				    });
-				    $("#edit").click(function(){
-				    	var goodN = $(".goodsname").html();
-				    	var goodI = $(".goodsitem").html();
-				    	var goodP = $(".goodsprice").html();
-				    	var goodST = $(".goodssort").html();
-				    	var goodSK = $(".goodsstock").html();
-				    	var goodSL= $(".goodssales").html();
+				    $(".edit").click(function(){
+				    	var goodN = $(this).parent().siblings(".goodsname").children().html();
+				    	var goodI = $(this).parent().siblings(".goodsitem").children().html();
+				    	var goodP = $(this).parent().siblings(".goodsprice").children().html();
+				    	var goodST = $(this).parent().siblings(".goodssort").children().html();
+				    	var goodSK = $(this).parent().siblings(".goodsstock").children().html();
+				    	var goodSL= $(this).parent().siblings( ".goodssales").children().html();
 				    	location.href = './addgoods.html?name='+ goodN + "&item=" + goodI + "&price=" + goodP + "&sort=" + goodST + "&stock=" + goodSK + "&sales=" + goodSL;
 				    })
-				    $("#del").click(function(){
-				    	$(this).parent().parent().remove();
+				    $(".del").click(function(){
+				    	var goodN = $(this).parent().siblings(".goodsname").children().html();
+				    	var that = $(this);
+//				    	$(this).parent().parent().remove();
+				    	$.ajax({
+				    		type:"post",
+				    		url:"/goods/api/remove",
+				    		data:{
+				    			goodN : goodN
+				    		},
+				    		async:true,
+				    		success:function(res){
+				    			if(res.code = 1){
+				    				that.parent().parent().remove();
+				    				alert("删除成功");
+				    			}else{
+				    				alert(res);
+				    			}
+				    		}
+				    	});
 				    })
 				}
 	    	});

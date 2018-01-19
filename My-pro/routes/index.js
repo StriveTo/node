@@ -91,6 +91,7 @@ router.post("/api/addgoods",function(req,res){
 			return;
 		}
 		var gm = new GoodsModel();
+		gm.flag = 1;
 		gm.goodsname = goodsname;
 		gm.goodsitem = goodsitem;
 		gm.goodsprice = goodsprice;

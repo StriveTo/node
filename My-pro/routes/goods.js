@@ -52,4 +52,25 @@ router.post("/api/remove",function(req,res){
 	})
 })
 
+//修改商品
+router.post("/api/edit",function(req,res){
+	var nameid = req.body.nameid;
+	var itemChange =req.body.itemChange;
+	var priceChange =req.body.priceChange;
+	var sortChange =req.body.sortChange;
+	var salesChange =req.body.salesChange;
+	var stockChange =req.body.stockChange;
+	var result = {
+		code : 1,
+		message : "商品修改成功"
+	}
+	GoodsModel.update({goodsname : nameid},{$set:{goodsitem : itemChange,goodsprice : priceChange,goodssort : sortChange,goodssales : salesChange,goodsstock : stockChange}},function(err){
+		if(err){
+			result.code = -300;
+			result.message = "商品修改失败";
+		}
+		res.json(result);
+	})
+})
+
 module.exports = router;

@@ -460,7 +460,7 @@
 				    		success:function(res){
 				    			if(res.code = 1){
 				    				that.parent().parent().remove();
-				    				alert("删除成功");
+				    				alert(res.message);
 				    			}else{
 				    				alert(res);
 				    			}

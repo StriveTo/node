@@ -396,6 +396,26 @@
 					}
 				}
 			});
+			$.ajax({
+				type:"post",
+				url:"/goods/api/edit",
+				async:true,
+				data:{
+					nameid : $("#goods-name").val(),
+					itemChange : $("#goods-item").val(),
+					priceChange : $("#goods-price").val(),
+					sortChange : $("#goods-sort").val(),
+					salesChange : $("#goods-sales").val(),
+					stockChange : $("#goods-stock").val()
+				},
+				success:function(res){
+					if(res.code = 1){
+						alert(res.message);
+					}else{
+						alert(res.message);
+					}
+				}
+			});
 		}
 		function getvalue(){    
 		    var str=window.location.search;//location.search是从当前URL的?号开始的字符串     
@@ -411,14 +431,18 @@
 		    	arr2[keyAndValue[0]] = keyAndValue[1];
 		    }
 		    console.log(arr2.name);
-		    $("#goods-name").val(arr2.name);
+		    if(arr2.name){
+		    	$("#goods-name").val(decodeURIComponent(arr2.name));
+		    }else{
+		    	$("#goods-name").val("");
+		    }
 		    $("#goods-item").val(arr2.item);
 		    $("#goods-price").val(arr2.price);
 		    $("#goods-sort").val(arr2.sort);
 		    $("#goods-sales").val(arr2.sales);
 		    $("#goods-stock").val(arr2.stock);
-			
 		}
 		getvalue();
+		
 	</script>
 </html>
